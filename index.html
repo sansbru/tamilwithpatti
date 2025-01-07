@@ -1,5 +1,200 @@
-<html>
-    <body>
-        This is a test
-    </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Learn Tamil with Chellam Paati</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #800000;
+            color: #003366;
+        }
+        header {
+            background-image: url(https://www.freepik.com/free-photos-vectors/grandmother);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            border-radius: 10px;
+        }
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px #ff33cc;
+        }
+        header p {
+            font-size: 1.5rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ff99cc;
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #003366;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            background-color: #ff3399;
+            transform: scale(1.1);
+            color: white;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: #ff6699;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-top: 15px;
+            background-color: #ff3399;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn:hover {
+            background-color: #ff66b2;
+            transform: scale(1.1);
+        }
+
+        /* Popup style */
+        #popup, #languagePopup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+        }
+        #popupContent, #languagePopupContent {
+            background: #ff3399;
+            padding: 25px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.3rem;
+        }
+        #popupClose, #languagePopupClose {
+            padding: 10px 20px;
+            background-color: #e60000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Let's Learn Tamil with Chellam Paati</h1>
+        <p>Join Paati for a fun and colorful Tamil learning adventure!</p>
+        <p style="font-style: italic; font-weight: bold; margin-top: 10px;">"The good strict Tamil teacher kids go for."</p>
+        <p style="font-weight: bold; color: #ffd700; font-size: 1.3rem;">தமிழ் நமது மொழி, நமது தாய்மொழி</p>
+    </header>
+
+    <nav>
+        <a href="#about">About Paati</a>
+        <a href="#schedule">Class Schedule</a>
+        <a href="#contact" onclick="showPopup()">Contact</a>
+        <a href="#" onclick="showLanguagePopup()">About Tamil</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="card">
+            <h2>About Chellam Paati</h2>
+            <p>Chellam Paati is an 80-year-old Tamil teacher who has been teaching for 65 years. She is very kind (can get strict at certain points), loves telling stories, and teaches Tamil like a professional. She teaches just like an average Tamil Nadu teacher, and has taught 7,000+ students, helping them enter big jobs.</p>
+        </section>
+
+        <section id="schedule" class="card">
+            <h2>Class Schedule</h2>
+            <p>Classes are every week! Each session costs just $5. You can learn with Paati online. Payments are expected at the end of every month.</p>
+            <ul>
+                <li>Saturday & Sunday: 3 PM-4 PM (Online)</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="card">
+            <h2>Contact</h2>
+            <p>Want to learn more? You can reach out to Paati here!</p>
+            <ul>
+                <li>Phone: <a href="tel:+12022814264">+1 (202) 281 4264</a></li>
+                <li>Email: <a href="mailto:chellam.nesmal@gmail.com">chellam.nesmal@gmail.com</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Let's Learn Tamil with Chellam Paati. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Contact Popup -->
+    <div id="popup">
+        <div id="popupContent">
+            <h2>Contact Information</h2>
+            <p>Thanks for reaching out! You can contact Paati using these details:</p>
+            <ul>
+                <li>Phone: +1 (202) 281 4264</li>
+                <li>Email: chellam.nesmal@gmail.com</li>
+            </ul>
+            <button id="popupClose" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- Language Popup -->
+    <div id="languagePopup">
+        <div id="languagePopupContent">
+            <h2>About Tamil</h2>
+            <p>Tamil is one of the oldest languages in the world, rich in literature, culture, and history. It is spoken by over 80 million people worldwide and has a tradition that dates back thousands of years. It is a Dravidian, South Indian language spoken in Tamil Nadu, and Sri Lanka.</p>
+            <p>Learning Tamil connects you to this vibrant heritage and helps preserve its legacy.</p>
+            <button id="languagePopupClose" onclick="closeLanguagePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
