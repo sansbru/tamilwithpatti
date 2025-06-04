@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Let's Learn Tamil with Chellam Paati</title>
     <style>
         body {
@@ -92,7 +92,6 @@
             background-color: #ff66b2;
             transform: scale(1.1);
         }
-
         /* Popup style */
         #popup {
             display: none;
@@ -124,7 +123,6 @@
             font-size: 1rem;
             border-radius: 5px;
         }
-
         /* Media Query for Mobile Screens */
         @media (max-width: 768px) {
             header h1 {
@@ -144,79 +142,3 @@
                 padding: 15px;
             }
             footer {
-                font-size: 0.9rem;
-            }
-            .btn {
-                font-size: 0.9rem;
-                padding: 10px 15px;
-            }
-            #popupContent {
-                font-size: 1rem;
-                padding: 15px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Let's Learn Tamil with Chellam Paati</h1>
-        <p>Join Paati for a fun and colorful Tamil learning adventure!</p>
-        <p style="font-style: italic; font-weight: bold; margin-top: 10px;">"The good Tamil teacher kids go for."</p>
-        <p style="font-weight: bold; color: #ffd700; font-size: 1.3rem;">தமிழ் நமது மொழி, நமது தாய்மொழி</p>
-    </header>
-
-    <nav>
-        <a href="#about">About Paati</a>
-        <a href="#schedule">Class Schedule</a>
-        <a href="#contact" onclick="showPopup()">Contact</a>
-    </nav>
-
-    <div class="container">
-        <section id="about" class="card">
-            <h2>About Chellam Paati</h2>
-            <p>Chellam Paati is an 80-year-old Tamil teacher who has been teaching for 65 years. She is very kind, loves telling stories, and teaches Tamil like a professional. She teaches just like an average Tamil Nadu teacher, and has taught 7,000+ students, helping them enter good carriers</p>
-        </section>
-
-        <section id="schedule" class="card">
-            <h2>Class Schedule</h2>
-            <p>Classes are every Sat and Sun! Each session costs just $5. You can learn with Paati online.</p>
-            <ul>
-                <li>Saturday & Sunday: 3 PM-4 PM (Online)</li>
-            </ul>
-        </section>
-
-        <section id="contact" class="card">
-            <h2>Contact</h2>
-            <p>Want to learn more? You can reach out to Paati here!</p>
-            <ul>
-                <li>Email: <a href="mailto:chellsri@yahoo.com">chellsri@yahoo.com</a></li>
-            </ul>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Let's Learn Tamil with Chellam Paati. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Contact Popup -->
-    <div id="popup">
-        <div id="popupContent">
-            <h2>Contact Information</h2>
-            <p>Thanks for reaching out! You can contact Paati using these details:</p>
-            <ul>
-                <li>Email: chellsri@yahoo.com</li>
-            </ul>
-            <button id="popupClose" onclick="closePopup()">Close</button>
-        </div>
-    </div>
-
-    <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'block';
-        }
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
-    </script>
-</body>
-</html>
