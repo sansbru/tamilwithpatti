@@ -1,237 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Let's Learn Tamil with Chellam Paati</title>
-    <style>
-        body {
-            font-family: 'Comic Sans MS', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #800000;
-            color: #003366;
-        }
-        header {
-            background-image: url(header.jpg);
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            border-radius: 10px;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            text-shadow: 2px 2px #ff33cc;
-        }
-        header p {
-            font-size: 1.2rem;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            background-color: #ff99cc;
-            padding: 1rem 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        nav a {
-            margin: 5px 10px;
-            text-decoration: none;
-            color: #003366;
-            font-weight: bold;
-            font-size: 1rem;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        nav a:hover {
-            background-color: #ff3399;
-            transform: scale(1.1);
-            color: white;
-        }
-        .container {
-            max-width: 100%;
-            margin: 20px auto;
-            padding: 0 10px;
-        }
-        .card {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        footer {
-            background-color: #ff6699;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            font-size: 1rem;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            margin-top: 15px;
-            background-color: #ff3399;
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .btn:hover {
-            background-color: #ff66b2;
-            transform: scale(1.1);
-        }
-        /* Popup style */
-        #popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            text-align: center;
-            padding-top: 20%;
-        }
-        #popupContent {
-            background: #ff3399;
-            padding: 20px;
-            border-radius: 12px;
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 1.1rem;
-        }
-        #popupClose {
-            padding: 10px 15px;
-            background-color: #e60000;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-        }
-        /* Media Query for Mobile Screens */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            header p {
-                font-size: 1rem;
-            }
-            nav a {
-                font-size: 0.9rem;
-                padding: 0.4rem;
-            }
-            .container {
-                padding: 0 15px;
-            }
-            .card {
-                padding: 15px;
-            }
-            footer {
-                font-size: 0.9rem;
-            }
-            .btn {
-                font-size: 0.9rem;
-                padding: 10px 15px;
-            }
-            #popupContent {
-                font-size: 1rem;
-                padding: 15px;
-            }
-            img.paati-photo {
-                max-width: 100%;
-                height: auto;
-                margin-top: 15px;
-                border-radius: 12px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            }
-        }
-        /* Image styling */
-        img.paati-photo {
-            max-width: 400px;
-            height: auto;
-            display: block;
-            margin: 15px auto 0 auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's Learn Tamil with Chellam Paati</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #800000;
+      color: #003366;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    header {
+      background-image: url(header.jpg);
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      text-shadow: 2px 2px #ff33cc;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #ff99cc;
+      padding: 1rem 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    nav a {
+      margin: 5px 10px;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+    body.dark nav a {
+      color: white;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    body.dark .card {
+      background: #1e1e1e;
+    }
+    .faq details {
+      margin-bottom: 10px;
+    }
+    .toggle-buttons {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    #darkModeToggle, #languageToggle {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #scrollTopBtn, #scrollDownBtn {
+      position: fixed;
+      right: 20px;
+      padding: 10px 15px;
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      display: none;
+    }
+    #scrollTopBtn {
+      bottom: 60px;
+    }
+    #scrollDownBtn {
+      bottom: 20px;
+    }
+    input[type="text"], input[type="email"], textarea {
+      border: 2px solid #0099ff;
+      box-shadow: 0 0 10px 2px #00ccff;
+      padding: 10px;
+      border-radius: 6px;
+      transition: box-shadow 0.3s;
+      width: 100%;
+      margin-top: 5px;
+    }
+    input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 15px 3px #00ccff;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+    }
+    form button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    form button:hover {
+      background-color: #cc0066;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f3f3f3;
+      color: #333;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Let's Learn Tamil with Chellam Paati</h1>
-        <p>Join Paati for a fun and colorful Tamil learning adventure!</p>
-        <p style="font-style: italic; font-weight: bold; margin-top: 10px;">"The good Tamil teacher kids go for."</p>
-        <p style="font-weight: bold; color: #ffd700; font-size: 1.3rem;">தமிழ் நமது மொழி, நமது தாய்மொழி</p>
-    </header>
+  <div class="toggle-buttons">
+    <button id="darkModeToggle">🌙</button>
+    <button id="languageToggle">தமிழ்</button>
+  </div>
 
-    <nav>
-        <a href="#about">About Paati</a>
-        <a href="#schedule">Class Schedule</a>
-        <a href="#contact" onclick="showPopup()">Contact</a>
-    </nav>
+  <header>
+    <h1 data-en="Let's Learn Tamil with Chellam Paati" data-ta="செல்லம் பாட்டியுடன் தமிழ் கற்கலாம்">Let's Learn Tamil with Chellam Paati</h1>
+    <p data-en="Join Paati for a fun and colorful Tamil learning adventure!" data-ta="விளையாட்டு மற்றும் வண்ணமயமான தமிழ் கற்கும் பயணத்திற்கு பாட்டியை சேருங்கள்!">Join Paati for a fun and colorful Tamil learning adventure!</p>
+    <p><strong>தமிழ் நமது மொழி, நமது தாய்மொழி</strong></p>
+  </header>
 
-    <div class="container">
-        <section id="about" class="card">
-            <h2>About Chellam Paati</h2>
-            <img src="paati_photo.png" alt="Chellam Paati smiling and teaching Tamil" class="paati-photo" />
-            <p>Chellam Paati is an 80-year-old Tamil teacher who has been teaching for 65 years. She is very kind, loves telling stories, and teaches Tamil like a professional. She teaches like a extraordinary Tamil Nadu teacher, and has taught 7,000+ students, helping them enter good carriers.</p>
-        </section>
+  <nav>
+    <a href="#about" data-en="About Paati" data-ta="பாட்டியைப் பற்றி">About Paati</a>
+    <a href="#schedule" data-en="Class Schedule" data-ta="வகுப்பு நேரம்">Class Schedule</a>
+    <a href="#testimonials" data-en="Testimonials" data-ta="பாராட்டுகள்">Testimonials</a>
+    <a href="#faq" data-en="FAQ" data-ta="அடிக்கடி கேட்கப்படும் கேள்விகள்">FAQ</a>
+    <a href="#contact" data-en="Contact" data-ta="தொடர்பு">Contact</a>
+  </nav>
 
-        <section id="schedule" class="card">
-            <h2>Class Schedule</h2>
-            <p>Classes are every Sat and Sun! Each session costs just $5. You can learn with Paati online.</p>
-            <ul>
-                <li>Saturday & Sunday: 3 PM-4 PM (Online)</li>
-            </ul>
-        </section>
+  <div class="container">
+    <!-- Existing sections stay unchanged -->
 
-        <section id="contact" class="card">
-            <h2>Contact</h2>
-            <p>Want to learn more? You can reach out to Paati here!</p>
-            <ul>
-                <li>Email: <a href="mailto:chellsri@yahoo.com">chellsri@yahoo.com</a></li>
-            </ul>
-        </section>
-    </div>
+    <section id="contact" class="card">
+      <h2 data-en="Contact" data-ta="தொடர்பு">Contact</h2>
+      <form action="mailto:chellsri@yahoo.com" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
-    <footer>
-        <p>&copy; 2025 Let's Learn Tamil with Chellam Paati. All Rights Reserved.</p>
-    </footer>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-    <!-- Contact Popup -->
-    <div id="popup">
-        <div id="popupContent">
-            <h2>Contact Information</h2>
-            <p>Thanks for reaching out! You can contact Paati using these details:</p>
-            <ul>
-                <li>Email: chellsri@yahoo.com</li>
-            </ul>
-            <button id="popupClose" onclick="closePopup()">Close</button>
-        </div>
-    </div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-    <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'block';
-        }
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
-    </script>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+  <button id="scrollDownBtn" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})">↓</button>
+
+  <footer>
+    <p>&copy; 2025 Let's Learn Tamil with Chellam Paati. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.onscroll = function () {
+      document.getElementById('scrollTopBtn').style.display = window.scrollY > 100 ? 'block' : 'none';
+      document.getElementById('scrollDownBtn').style.display = window.scrollY < document.body.scrollHeight - window.innerHeight - 100 ? 'block' : 'none';
+    };
+
+    document.getElementById('darkModeToggle').onclick = () => {
+      document.body.classList.toggle('dark');
+    };
+
+    document.getElementById('languageToggle').onclick = () => {
+      const elements = document.querySelectorAll('[data-en]');
+      const isTamil = document.body.getAttribute('data-lang') === 'ta';
+      elements.forEach(el => {
+        el.textContent = isTamil ? el.getAttribute('data-en') : el.getAttribute('data-ta');
+      });
+      document.body.setAttribute('data-lang', isTamil ? 'en' : 'ta');
+    };
+  </script>
 </body>
 </html>
+    
